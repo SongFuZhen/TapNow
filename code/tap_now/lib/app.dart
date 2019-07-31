@@ -34,16 +34,16 @@ class _AppPageState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      navigatorKey: Catcher.navigatorKey,
-      builder: (BuildContext context, Widget widget) {
-        Catcher.addDefaultErrorWidget(
-          showStacktrace: true,
-          customTitle: "错误页面",
-          customDescription: "错误啦",
-        );
+      // navigatorKey: Catcher.navigatorKey,
+      // builder: (BuildContext context, Widget widget) {
+      //   Catcher.addDefaultErrorWidget(
+      //     showStacktrace: true,
+      //     customTitle: "错误页面",
+      //     customDescription: "错误啦",
+      //   );
 
-        return widget;
-      },
+      //   return widget;
+      // },
       theme: new ThemeData(
           brightness: Brightness.light, primaryColor: Colors.white),
       home: Home(),
@@ -53,12 +53,12 @@ class _AppPageState extends State<App> {
         '/me': (BuildContext context) => new Me(),
       },
       onGenerateRoute: Application.router.generator,
-      localizationsDelegates: [
-        FlutterI18nDelegate(
-            useCountryCode: false, fallbackFile: 'zh', path: 'assets/locales'),
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate
-      ],
+      // localizationsDelegates: [
+      //   FlutterI18nDelegate(
+      //       useCountryCode: false, fallbackFile: 'zh', path: 'assets/locales'),
+      //   GlobalMaterialLocalizations.delegate,
+      //   GlobalWidgetsLocalizations.delegate
+      // ],
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappbrowser/flutter_inappbrowser.dart';
+import 'package:tap_now/utils/ApplicationUtils.dart';
 
 class Overview extends StatefulWidget {
   @override
@@ -35,19 +36,30 @@ class _OverviewState extends State<Overview> {
 
   Widget _buildPage() {
     return Container(
-        height: double.infinity,
-        width: double.infinity,
         child: Wrap(
+      children: <Widget>[
+        Container(
+            child: Row(
           children: <Widget>[
             Container(
-                height: 170,
-                child: InAppWebView(
-                  initialFile: 'assets/weather.html',
-                  onWebViewCreated: (InAppWebViewController controller) {
-                    webViewController = controller;
-                  },
-                )),
+              height: 60,
+              width: MediaQuery.of(context).size.width - 100,
+              child: InAppWebView(
+                initialFile: 'assets/min_weather.html',
+                onWebViewCreated: (InAppWebViewController controler) {
+                  webViewController = controler;
+                },
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Application.router.navigateTo(context, '/weather');
+              },
+              child: Text("Detail"),
+            )
           ],
-        ));
+        )),
+      ],
+    ));
   }
 }
