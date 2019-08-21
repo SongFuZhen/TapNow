@@ -1,10 +1,14 @@
 {
+    "scripts": {
+        "commit": "npx git-cz"
+    },
     "devDependencies": {
         "husky": "^3.0.4"
     },
     "husky": {
         "hooks": {
-            "commit": "npx git-cz"
+            "pre-commit-message": "Please Use npm run commit / yarn commit",
+            "pre-commit": ""
         }
     }
 }
