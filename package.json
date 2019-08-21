@@ -1,5 +1,10 @@
 {
-    "scripts": {
-        "precommit": "asdfasfasdf"
+    "devDependencies": {
+        "husky": "^3.0.4"
+    },
+    "husky": {
+        "hooks": {
+            "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+        }
     }
 }
