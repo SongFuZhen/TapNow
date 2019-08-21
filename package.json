@@ -1,5 +1,5 @@
 {
-    "version": "1.0.1",
+    "version": "1.0.2",
     "scripts": {
         "commit": "npx git-cz",
         "log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
